@@ -34,7 +34,7 @@ monitors:
     linkable: false # allows the title to be a link, default=true
 
   - id: us-2 # unique identifier
-    name: 美国节点1
+    name: 美国节点2
     description: '￥0.15/GB' # default=empty
     url: 'https://us-2.villageflower.me' # URL to fetch
     method: GET # default=GET
