@@ -4,20 +4,48 @@ settings:
   daysInHistogram: 30 # number of days you want to display in histogram
   collectResponseTimes: true # collects avg response times from CRON locations
 
-  allmonitorsOperational: 'All Systems Operational'
-  notAllmonitorsOperational: 'Not All Systems Operational'
-  monitorLabelOperational: 'Operational'
-  monitorLabelNotOperational: 'Not Operational'
-  monitorLabelNoData: 'No data'
-  dayInHistogramNoData: 'No data'
-  dayInHistogramOperational: 'All good'
-  dayInHistogramNotOperational: ' incident(s)' # xx incident(s) recorded
+  allmonitorsOperational: '所有节点正常'
+  notAllmonitorsOperational: '部分节点正常'
+  monitorLabelOperational: '正常运转'
+  monitorLabelNotOperational: '无法连接'
+  monitorLabelNoData: '无'
+  dayInHistogramNoData: '无历史数据'
+  dayInHistogramOperational: '正常运转'
+  dayInHistogramNotOperational: ' 有故障' # xx incident(s) recorded
 
 monitors:
   - id: hk-1 # unique identifier
     name: 香港节点1
-    description: '30Mbps ￥0.5/GB' # default=empty
+    description: '￥0.5/GB' # default=empty
     url: 'https://hk-1.villageflower.me' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
+
+  - id: us-1 # unique identifier
+    name: 美国节点1
+    description: '￥0.15/GB' # default=empty
+    url: 'https://us-1.villageflower.me' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
+  - id: us-2 # unique identifier
+    name: 美国节点1
+    description: '￥0.15/GB' # default=empty
+    url: 'https://us-2.villageflower.me' # URL to fetch
+    method: GET # default=GET
+    expectStatus: 200 # operational status, default=200
+    followRedirect: false # should fetch follow redirects, default=false
+    linkable: false # allows the title to be a link, default=true
+
+  - id: jp-1 # unique identifier
+    name: 日本节点1
+    description: '￥0.4/GB' # default=empty
+    url: 'https://jp-1.villageflower.me' # URL to fetch
     method: GET # default=GET
     expectStatus: 200 # operational status, default=200
     followRedirect: false # should fetch follow redirects, default=false
